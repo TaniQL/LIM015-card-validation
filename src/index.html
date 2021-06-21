@@ -2,13 +2,113 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tarjeta de crédito válida</title>
+    <title>Verificación de tarjeta de crédito/débito</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script src="index.js" type="module"></script>
+    <!--Sección para la interfaz de tarjeta -->
+    <div class="contenedor">
+
+      <!--Tarjeta de crédito interactiva-->
+      <section class="creditcard" id="creditcard">
+
+        <div class="delantera">
+            <div class="logo-marca" id="logo-marca">
+            </div>
+            <img src="img/chip-tarjeta.png" class="chip" alt="">
+            <div class="datos">
+              <div class="grupo" id="numero">
+                <p class="label">Número de tarjeta</p>
+                <p class="numero">#### #### #### ####</p>
+              </div>
+              <div class="flexbox">
+                <div class="grupo" id="nombre">
+                  <p class="label">Titular de tarjeta</p>
+                  <p class="nombre">Jhon Doe</p>
+                </div>
+
+                <div class="grupo" id="expiracion">
+                  <p class="label">Expiracion</p>
+                  <p class="expiracion"><span class="mes">MM/AA</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trasera">
+            <div class="barra-magnetica"></div>
+            <div class="datos">
+              <div class="grupo" id="firma">
+                <p class="label">Firma</p>
+                <div class="firma"><p>Jhon Doe</p></div>
+              </div>
+              <div class="grupo" id="cvv2">
+                <p class="label">CVV</p>
+                <p class="cvv2"></p>
+              </div>
+            </div>
+            <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+            <a href="#" class="link-banco">www.tubanco.com</a>
+
+
+        </div>
+      </section>
+
+      <!--Formulario-->
+      <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+        <div class="grupo">
+          <label for="inputNumero">Número Tarjeta</label>
+          <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+        </div>
+        <div class="grupo">
+          <label for="input-nombre">Nombre</label>
+          <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+        </div>
+
+        <div class="flexbox">
+          <div class="grupo expira">
+            <label for="selectMes">MM/AA</label>
+            <input type="text" id="SelectMes" maxlength="4" autocomplete="off">
+          </div>
+          <div class="grupo cvv">
+            <label for="inputCVV">CVV</label>
+            <input type="text" id="inputCVV" maxlength="3" autocomplete="off">
+          </div>
+        </div>
+        <button type="submit" class="btn-enviar" id="verificar">Verificar</button>
+      </form>
+    </div>
+
+    <!--Crear una ventana modal para no usar un alert-->
+   
+    <!-- <div class="modal">
+      <h1>Modal</h1>
+      <p>La tarjeta ha sido verificada</p>
+      <a href="#" class="cta">Modal</a>
+    </div> -->
+    
+    <div class="modal-container">
+      <div class="modal modal-close">
+        <p class="close">X</p>
+        <img src="img/creditcard.svg" alt="" />
+        <div class="modal-textos" id="modal-textos">
+            <h2 class="modal-textos">Verificación completada</h2>
+            <p id= "prueba">
+              <!--Agregar imagen de check or wrong-->
+            </p>
+             <h3 id="prueba2"></h3>
+        </div>
+      </div>
+    </div>
+
+      <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+      <script src="index.js" type="module"></script>
+
+<!--Pie de página con información de la desarrolladora
+  <footer>
+    <p>Diseñado por Tania Quispe Lazo LIM015</p>
+  </footer!-->
+
   </body>
 </html>
