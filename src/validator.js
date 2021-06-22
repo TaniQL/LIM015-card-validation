@@ -8,7 +8,7 @@ const validator = {
       con la condición de que si es mayor a 9, deben sumarse los dígitos y devolverlo al arreglo*/
     for(let i=0; i<digito.length; i++){
       if(i%2!=0){
-         digito[i] = digito[i]*2;{
+        digito[i] = digito[i]*2;{
         if(digito[i]>9){
           digito[i] = parseInt(String(digito[i]).charAt(0)) + parseInt(String(digito[i]).charAt(1));
         }
