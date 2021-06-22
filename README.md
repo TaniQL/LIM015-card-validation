@@ -19,28 +19,32 @@ a. Mostrar la cara delantera de la tarjeta de crédito mientras se completan los
 
 
 ![alt text](src/img/Readme/1.png)
-Cara delantera de la tarjeta de crédito.
+_Cara delantera de la tarjeta de crédito._
 
 
 b. Al completar el campo del CVV la tarjeta se voltea automáticamente, también se puede voltear dando un click a la tarjeta.
 
 
 ![alt text](src/img/Readme/2.png)
-Cara trasera de la tarjeta de crédito.
+_Cara trasera de la tarjeta de crédito._
 
 
 c.Al dar click al botón "Verificar" aparece una ventana Modal que indica si la tarjeta es válida o no.
 
 
 ![alt text](src/img/Readme/3.png)
-Activación del modal indicando si la tarjeta es o no válida.
+_Activación del modal indicando si la tarjeta es o no válida._
 
 # 4.Resultado Final
 
 El resultado final es el que se muestra en la siguiente imagen. Puede ser fácilmente implementado en bancos, tiendas online, aplicaciones móviles,etc.
 
 
-![alt text](src/img/Readme/final.png)
+![alt text](src/img/Readme/caradelantera.PNG)
+
+
+![alt text](src/img/Readme/caratrasera.PNG)
+
 
 # 5. Objetivos de aprendizaje
 
