@@ -59,8 +59,7 @@ formulario.inputNumero.addEventListener('keyup',(e) => {
     const imagen =document.createElement('img');
     imagen.src='img/logos/mastercard.png';
     logoMarca.appendChild(imagen);
-  }
-  else if(valorInput[0]==3){
+  } else if(valorInput[0]==3){
     logoMarca.innerHTML='';
     const imagen =document.createElement('img');
     imagen.src='img/logos/amax.png';
@@ -95,28 +94,31 @@ formulario.inputNombre.addEventListener('keyup', (e) => {
 formulario.SelectMes.addEventListener('keyup', (e) => {
   let valorInput =e.target.value;
 
-  formulario.SelectMes.value= valorInput
+  /*---Añadir '/' a la fecha de expiración entre MM y AA ---*/
+
+  let fecha = valorInput;
+	let transform = [];
+	for(let i = 0;i < fecha.length; i += 2){
+	  transform.push(fecha.substr(i, 2));
+  }
+  let a =transform.join('/');
+
+  //formulario.SelectMes.value= valorInput
+  formulario.SelectMes.value= a
   //Eliminar los espacios en blanco con el /\s/
   .replace(/\s/g, '')
   //Eliminar las letras para que solo ingresen números
   .replace(/\D/g, '');
 
-  expiracion.textContent= valorInput;
-  if(valorInput== ''){
+  expiracion.textContent=  a;
+  if(a== ''){
     expiracion.textContent = 'MM/AA';
   }
   mostrarFrente();
 
-  /* 
-  let a = "1234"
-	let transform = [];
-	
-	for(let i = 0;i < a.length; i += 2){
-	  transform.push(a.substr(i, 2));
-	}
-	
-	console.log(transform.join('/'));*/
 })
+
+
 
 //*Input cvv
 formulario.inputCVV.addEventListener('keyup', () => {
@@ -174,27 +176,5 @@ window.addEventListener("click",function(e){
   },500)
   }
 })
-
-/*
-// Conectar el JS con HTML a través del botón "verificar"
-const tarjeta = document.getElementById('verificar');
-// Que reciba la señal del click
-tarjeta.addEventListener("click",() => {
-    let creditcardNumber = document.getElementById("inputNumero").value;
-    let validatorCard = validator.isValid(creditcardNumber);
-    let mascara = validator.maskify(creditcardNumber);
-    if(validatorCard === true && creditcardNumber !== "") { 
-      mascara;
-      alert("La tarjeta"+ mascara + " es válida");
-     }
-      else if (creditcardNumber === "") {
-        mascara;
-        alert("Ingrese el número de la tarjeta."); 
-    } else {
-      alert("La tarjeta es incorrecta")
-    }
-    });
-validator.isValid(tarjeta);
-validator.maskify(tarjeta);*/
 
 console.log(validator);
