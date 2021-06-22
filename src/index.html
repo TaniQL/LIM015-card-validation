@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!--Sección para la interfaz de tarjeta -->
+
+    <!------------------------------Sección para la interfaz de tarjeta------------------------>
     <div class="contenedor">
 
-      <!--Tarjeta de crédito interactiva-->
+      <!-----------Tarjeta de crédito interactiva------->
       <section class="creditcard" id="creditcard">
 
+        <!-----------Cara delantera de la tarjeta de crédito ---------->
         <div class="delantera">
             <div class="logo-marca" id="logo-marca">
             </div>
@@ -35,7 +37,7 @@
               </div>
             </div>
           </div>
-
+          <!-----------Cara trasera de la tarjeta de crédito ---------->
           <div class="trasera">
             <div class="barra-magnetica"></div>
             <div class="datos">
@@ -57,11 +59,11 @@
         </div>
       </section>
 
-      <!--Formulario-->
+      <!-------------------------Formulario para ingresar datos de tarjeta---------------------->
       <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
         <div class="grupo">
           <label for="inputNumero">Número de Tarjeta</label>
-          <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+          <input type="text" id="inputNumero" maxlength="19" autocomplete="off" required>
         </div>
         <div class="grupo">
           <label for="input-nombre">Nombre del Titular</label>
@@ -82,25 +84,20 @@
       </form>
     </div>
 
-    <!--Crear una ventana modal para no usar un alert-->
+    <!-------------------------Ventana modal ----------------------------->
     <div class="modal-container">
       <div class="modal modal-close">
         <p class="close">X</p>
         <img src="img/creditcard.svg" alt="" />
         <div class="modal-textos" id="modal-textos">
             <h2 class="modal-textos">Verificación completada</h2>
-            <h1 id="prueba2"></h1>
+            <h2 id="prueba2"></h2>
         </div>
       </div>
     </div>
 
       <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
       <script src="index.js" type="module"></script>
-
-<!--Pie de página con información de la desarrolladora---
-  <footer>
-    <p>Diseñado por Tania Quispe Lazo LIM015</p>
-  </footer!>-->
 
   </body>
 </html>

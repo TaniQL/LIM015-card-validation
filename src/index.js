@@ -1,6 +1,6 @@
 import validator from './validator.js';
 
-//Realizar la funcionalidad de girar la tarjeta de crédito
+//------Realizar la funcionalidad de girar la tarjeta de crédito--------//
 
 const creditcard = document.querySelector('#creditcard');
 const formulario = document.querySelector('#formulario-tarjeta');
@@ -11,7 +11,7 @@ const firma = document.querySelector('#creditcard .firma p');
 const expiracion = document.querySelector('#creditcard .expiracion');
 const cvv = document.querySelector('#creditcard .cvv2');
 
-//*Voltear la tarjeta para mostrar la parte delantera
+//---------Voltear la tarjeta para mostrar la parte delantera---------//
 
 const mostrarFrente = () => {
   if(creditcard.classList.contains('active')){
@@ -19,13 +19,13 @@ const mostrarFrente = () => {
   }
 }
 
-// *Rotación de la tarjeta al hacer un click.
+//--Rotación de la tarjeta al hacer un click--//
 creditcard.addEventListener('click', () => {
   creditcard.classList.toggle('active');
 });
 
 
-//----Input numero de tarjeta----/
+//*Input numero de tarjeta----/
 
 formulario.inputNumero.addEventListener('keyup',(e) => {
   let valorInput=e.target.value;
@@ -48,7 +48,7 @@ formulario.inputNumero.addEventListener('keyup',(e) => {
   }
 
 
-//---Identifica 3 de las tarjetas más usadas en el país: Visa, Mastercard, American Express---/
+//*Identifica tarjeta Visa, Mastercard, American Express---/
   if(valorInput[0]== 4){
     logoMarca.innerHTML='';
     const imagen =document.createElement('img');
@@ -89,17 +89,17 @@ formulario.inputNombre.addEventListener('keyup', (e) => {
 })
 
 
-//*Input expiracion
+//*Input expiracion--//
 
 formulario.SelectMes.addEventListener('keyup', (e) => {
   let valorInput =e.target.value;
 
-  /*---Añadir '/' a la fecha de expiración entre MM y AA ---*/
+//Añadir '/' a la fecha de expiración entre MM y AA
 
   let fecha = valorInput;
 	let transform = [];
 	for(let i = 0;i < fecha.length; i += 2){
-	  transform.push(fecha.substr(i, 2));
+    transform.push(fecha.substr(i, 2));
   }
   let a =transform.join('/');
 
@@ -120,7 +120,7 @@ formulario.SelectMes.addEventListener('keyup', (e) => {
 
 
 
-//*Input cvv
+//*-----Input CVV
 formulario.inputCVV.addEventListener('keyup', () => {
   if(!creditcard.classList.contains('active')){
     creditcard.classList.toggle('active');
@@ -134,14 +134,14 @@ formulario.inputCVV.addEventListener('keyup', () => {
   cvv.textContent=formulario.inputCVV.value;
 })
 
-/*--------Cerrar el Modal----*/
+/*------------------------Cerrar el Modal-----------------------------------*/
 
 let cerrar= document.querySelectorAll(".close")[0];
 let abrir = document.querySelectorAll(".btn-enviar")[0];
 let modal = document.querySelectorAll(".modal")[0];
 let modalC = document.querySelectorAll(".modal-container")[0];
 
-/*---Dentro del modal, ingresar la función del validator---*/
+/*---Dentro del modal, ingresar la función del validator y maskify---*/
 
 abrir.addEventListener("click", function(e){
   e.preventDefault();
@@ -149,14 +149,10 @@ abrir.addEventListener("click", function(e){
   modalC.style.opacity = "1";
   modalC.style.visibility = "visible";
   modalC.classList.toggle("modal-close");
-  //document.getElementById("prueba").innerText = validator.maskify(valorInput);
   let mascara = validator.maskify(valorInput);
   document.getElementById("prueba2").innerText =validator.isValid(valorInput)?`La tarjeta ${mascara} es válida`:`La tarjeta ${mascara} no es válida`;
 
 })
-
-//validator.isValid(abrir);
-//validator.maskify(abrir);
 
 cerrar.addEventListener("click",function(){
   modal.classList.toggle("modal-close");
